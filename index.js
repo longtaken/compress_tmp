@@ -1,5 +1,5 @@
 "use strict";
-const compress=require("component");
+const compress=require("./lib/component");
 
 module.exports=function(entry,output){
     let str = compress.entryfile(entry);
