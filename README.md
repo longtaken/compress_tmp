@@ -1,2 +1,3 @@
 # compress_tmp
-鍘嬬缉templates鏂囦欢
+一些模板文件不能用uglifyjs去压缩，于是自己写了个插件。
+主要作用是去除模板文件中的空格跟注释。
