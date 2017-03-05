@@ -1,10 +1,10 @@
 "use strict";
-const compress=require("./lib/component");
+const compress=require("./lib/component"),
+      glob=require("glob");
 
 module.exports=function(entry,output){
-    let str = compress.entryfile(entry);
-    
-    const compress_str=compress.REGEXPmatch(str);
-
-    compress.outputfile(output,compress_str);
+    glob(entry,{nodir:true},(err,files)=>{
+        if(err)return console.log(err);
+        compress.runFn(files,output);
+    });
 };
